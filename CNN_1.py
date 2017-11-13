@@ -84,9 +84,9 @@ for i in range(20000):
     batch = mnist.train.next_batch(50)
     if i % 100 == 0:
         train_accuracy = accuracy.eval(feed_dict={xs: batch[0], ys: batch[1], keep_prob: 1.0})
-        print("step %d, train accuracy %g" % (i, train_accuracy), end='\t\t\t')
+        print("step %d, train accuracy %g" % (i, train_accuracy))
     train_step.run(feed_dict={xs: batch[0], ys: batch[1], keep_prob: 1.0})
 
-    if i % 2000 == 0:
-        print("step %d, test accuracy %g" % (i, accuracy.eval(feed_dict={xs: mnist.test.images, ys: mnist.test.labels, keep_prob: 1.0})))
+    if i % 1000 == 0:
+        print("############step %d, test accuracy %g" % (i, accuracy.eval(feed_dict={xs: mnist.test.images, ys: mnist.test.labels, keep_prob: 1.0})))
 
