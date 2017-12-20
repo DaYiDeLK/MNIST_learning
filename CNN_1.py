@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# -*- coding: utf-8 -*-
 
 
 import tensorflow as tf
@@ -88,5 +87,5 @@ for i in range(20000):
     train_step.run(feed_dict={xs: batch[0], ys: batch[1], keep_prob: 1.0})
 
     if i % 1000 == 0:
-        print("############step %d, test accuracy %g" % (i, accuracy.eval(feed_dict={xs: mnist.test.images, ys: mnist.test.labels, keep_prob: 1.0})))
-
+        print("############step %d, test accuracy %g" % (
+        i, accuracy.eval(feed_dict={xs: mnist.test.images, ys: mnist.test.labels, keep_prob: 1.0})))
